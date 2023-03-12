@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 def fibo(n)
-  return [0] if n == 0
+  return [0] if n.zero?
   return [0, 1] if n == 1
 
   fibo = Array.new(n, 0)
@@ -13,4 +15,8 @@ def fibo(n)
   fibo
 end
 
-p fibo(8) # => [0, 1, 1, 2, 3, 5, 8, 13].
+def fibo_rec(n)
+  return n if n <= 1
+
+  fibo_rec(n - 1) + fibo_rec(n - 2)
+end
