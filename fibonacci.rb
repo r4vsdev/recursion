@@ -20,3 +20,14 @@ def fibo_rec(n)
 
   fibo_rec(n - 1) + fibo_rec(n - 2)
 end
+
+def fibo_rec(n)
+  return [0] if n.zero?
+  return [0, 1] if n == 1
+
+  arr = fibo_rec(n - 1)
+  arr << arr[-2] + arr[-1]
+end
+
+p fibo(8)
+p fibo_rec(8)
