@@ -12,20 +12,16 @@ def flatten(array)
   new_arr
 end
 
-# def flatten_rec(array)
-#   return array if array.none? { |element| element.is_a?(Array) }
+def flatten_rec(array, result = [])
+  array.each do |element|
+    if element.is_a?(Array)
+      flatten_rec(element, result)
+    else
+      result << element
+    end
+  end
+  result
+end
 
-#   # index = array.index {|element| element.is_a?(Array)}
-
-#   result = []
-#   array.each do |element|
-#     if element.is_a?(Array)
-#       result << element.shift
-#     else
-#       result << element
-#     end
-#   end
-#   flatten(result)
-# end
-
-p flatten([[1, 2], 3])
+# p flatten([[1, 2], 3])
+p flatten_rec([[1, 2], 3])
