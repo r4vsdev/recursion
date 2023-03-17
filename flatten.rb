@@ -22,6 +22,3 @@ def flatten_rec(array, result = [])
   end
   result
 end
-
-# p flatten([[1, 2], 3])
-p flatten_rec([[1, 2], 3])
