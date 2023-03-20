@@ -19,11 +19,7 @@ def merge_sort(array)
       sorted.push(a.shift)
       next
     end
-    if a.min < b.min
-      sorted.push(a.delete(a.min))
-    else
-      sorted.push(b.delete(b.min))
-    end
+    a.min < b.min ? sorted.push(a.delete(a.min)) : sorted.push(b.delete(b.min))
   end
 
   sorted
